@@ -1,0 +1,178 @@
+/* ========================================
+   POETRY PAGE
+======================================== */
+
+main {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 6rem 1.5rem;
+
+}
+
+
+/* ========================================
+   POETRY HEADING
+======================================== */
+
+main h1 {
+
+    margin-bottom: 0.5rem;
+
+}
+
+
+main h2 {
+
+    margin-bottom: 3rem;
+
+    font-size: 2rem;
+
+}
+/* ========================================
+   POETRY LIST
+======================================== */
+
+#poetry-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+}
+/* ========================================
+   POETRY CARD
+======================================== */
+
+.poetry-card {
+
+    padding: 1.5rem 2rem;
+
+    border: 1px solid #252823;
+
+    transition: 250ms ease;
+
+}
+
+.poetry-card:hover {
+
+    transform: translateX(8px);
+
+}
+
+
+/* ========================================
+   POETRY TITLE
+======================================== */
+
+.poetry-card h3 {
+
+    margin: 0;
+
+}
+
+
+.poetry-card h3 a {
+
+    color: #252823;
+
+    text-decoration: none;
+
+}
+
+
+.poetry-card h3 a:hover {
+
+    color: #304A3A;
+
+}
+
+
+/* ========================================
+   POETRY INFORMATION
+======================================== */
+
+.poetry-card p {
+
+    margin-top: 0.5rem;
+
+    color: #6B6B6B;
+
+    font-size: 0.9rem;
+
+}
+
+
+
+/* ========================================
+   POETRY DETAIL
+======================================== */
+
+.poetry-detail-header {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 7rem 1.5rem 4rem;
+
+    text-align: center;
+
+}
+
+
+#poetry-title {
+
+    margin-bottom: 2rem;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+
+}
+
+
+#poetry-poet,
+#poetry-voice {
+
+    margin-top: 0.5rem;
+
+    color: #6B6B6B;
+
+}
+
+
+#poetry-rating {
+
+    margin-top: 2rem;
+
+    font-size: 1.5rem;
+
+}
+
+
+/* ========================================
+   POETRY CONTENT
+======================================== */
+
+#poetry-content {
+
+    max-width: 700px;
+
+    margin: 2rem auto 8rem;
+
+    padding: 4rem 1.5rem;
+
+    border-top: 1px solid #252823;
+
+    border-bottom: 1px solid #252823;
+
+    font-size: 1.2rem;
+
+    line-height: 2;
+
+    white-space: pre-line;
+
+}

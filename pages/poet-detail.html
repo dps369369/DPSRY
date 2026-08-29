@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poet | DPSRY</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/poet.css">
+</head>
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+        <nav>
+
+            <!-- Brand -->
+
+            <a href="../index.html">
+                DPSRY
+            </a>
+
+
+            <!-- Navigation -->
+
+            <div>
+
+                <a href="../index.html">
+                    HOME
+                </a>
+
+                <a href="./poets.html">
+                    POET
+                </a>
+
+                <a href="./poetry.html">
+                    POETRY
+                </a>
+
+                <a href="./voices.html">
+                    VOICE
+                </a>
+
+                <a href="./about.html">
+                    ABOUT
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         POET DETAIL
+    ======================================== -->
+
+    <main>
+
+        <!-- POET PHOTO -->
+
+        <img id="poet-photo" src="" alt="">
+
+
+        <!-- POET NAME -->
+
+        <h1 id="poet-name"></h1>
+
+
+        <!-- LIFE INFORMATION -->
+
+        <div id="poet-life">
+
+            <div class="poet-data-field">
+
+                <p class="poet-data-label">
+                    BORN
+                </p>
+
+                <p id="poet-birth"></p>
+
+            </div>
+
+
+            <div class="poet-data-field">
+
+                <p class="poet-data-label">
+                    STATUS
+                </p>
+
+                <p id="poet-death"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RANKING INFORMATION -->
+
+        <div id="poet-ranking">
+
+            <div class="poet-data-field">
+
+                <p class="poet-data-label">
+                    RANK
+                </p>
+
+                <p id="poet-rank"></p>
+
+            </div>
+
+
+            <div class="poet-data-field">
+
+                <p class="poet-data-label">
+                    RATING
+                </p>
+
+                <p id="poet-rating"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- POETRY COUNT -->
+
+        <div id="poet-poetry-stat">
+
+            <p class="poet-data-label">
+                POETRY
+            </p>
+
+            <p id="poet-poetry-count"></p>
+
+        </div>
+
+
+        <!-- INTRODUCTION -->
+
+        <p id="poet-introduction"></p>
+
+
+        <!-- POETRY -->
+
+        <h2>
+            Poetry
+        </h2>
+
+        <div id="poet-poetry-list"></div>
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <!-- Brand -->
+
+        <p>
+            DPSRY
+        </p>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a href="./poets.html">
+                POET
+            </a>
+
+            <a href="./poetry.html">
+                POETRY
+            </a>
+
+            <a href="./voices.html">
+                VOICE
+            </a>
+
+            <a href="./about.html">
+                ABOUT
+            </a>
+
+        </nav>
+
+
+        <!-- Copyright -->
+
+        <p>
+            © DPSRY
+        </p>
+
+    </footer>
+
+
+    <!-- ========================================
+         LOAD DPSRY DATA
+    ======================================== -->
+
+    <script src="../js/data.js"></script>
+
+    <!-- Load ranking functions -->
+
+    <script src="../js/ranking.js"></script>
+
+
+    <script>
+
+        // Wait until DPSRY data has loaded
+        loadDPSRYData().then(() => {
+
+            // ========================================
+            // GET POET ID
+            // ========================================
+
+            const urlParams = new URLSearchParams(
+                window.location.search
+            );
+
+            const poetId = urlParams.get("id");
+
+
+            // ========================================
+            // FIND POET
+            // ========================================
+
+            const poet = DPSRY_DATA.poets.find(
+                poet => poet.id === poetId
+            );
+
+
+            // Stop if Poet does not exist
+
+            if (!poet) {
+
+                document.body.innerHTML = `
+                    <h1>Poet not found</h1>
+                `;
+
+                return;
+
+            }
+
+
+            // ========================================
+            // POET RANKING
+            // ========================================
+
+            const poetStatistics = getPoetStatistics(
+                DPSRY_DATA.poets,
+                DPSRY_DATA.poetry
+            );
+
+
+            const rankedPoets = getRankedPoets(
+                poetStatistics
+            );
+
+
+            // Find this Poet's ranking information
+
+            const rankedPoet = rankedPoets.find(
+                rankedPoet => rankedPoet.id === poetId
+            );
+
+
+            // ========================================
+            // DISPLAY POET INFORMATION
+            // ========================================
+
+            document.getElementById(
+                "poet-photo"
+            ).src = `../assets/poets/${poet.photo}`;
+
+
+            document.getElementById(
+                "poet-photo"
+            ).alt = poet.name;
+
+
+            document.getElementById(
+                "poet-name"
+            ).textContent = poet.name;
+
+
+            document.getElementById(
+                "poet-birth"
+            ).textContent =
+                poet.birth;
+
+
+            if (poet.death) {
+
+                document.getElementById(
+                    "poet-death"
+                ).textContent =
+                    poet.death;
+
+            } else {
+
+                document.getElementById(
+                    "poet-death"
+                ).textContent =
+                    "LIVING";
+
+            }
+
+
+            document.getElementById(
+                "poet-rank"
+            ).textContent =
+                `#${rankedPoet.rank}`;
+
+
+            document.getElementById(
+                "poet-rating"
+            ).textContent =
+                rankedPoet.averageRating;
+
+
+            document.getElementById(
+                "poet-poetry-count"
+            ).textContent =
+                rankedPoet.poetryCount;
+
+
+            document.getElementById(
+                "poet-introduction"
+            ).textContent =
+                poet.introduction;
+            // ========================================
+            // GLOBAL POETRY RANKING
+            // ========================================
+
+            const rankedPoetry = getRankedPoetry(
+                DPSRY_DATA.poetry
+            );
+
+
+            // Find this Poet's Poetry
+            // while keeping the GLOBAL ranks
+
+            const poetPoetry = rankedPoetry.filter(
+                poem => poem.poet === poetId
+            );
+
+
+            // ========================================
+            // DISPLAY POETRY
+            // ========================================
+
+            const poetryList = document.getElementById(
+                "poet-poetry-list"
+            );
+
+
+            poetPoetry.forEach(poem => {
+
+                poetryList.innerHTML += `
+                    <article class="poetry-card">
+
+                        <h3>
+
+                            <a href="./poetry-detail.html?id=${poem.id}">
+                                #${poem.rank} — ${poem.name}
+                            </a>
+
+                        </h3>
+
+                        <p>
+                            Rating: ${poem.rating}
+                        </p>
+
+                    </article>
+                `;
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

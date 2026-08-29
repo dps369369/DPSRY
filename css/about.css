@@ -1,0 +1,120 @@
+/* ========================================
+   ABOUT — PAGE
+======================================== */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 7rem 1.5rem;
+}
+
+
+/* ========================================
+   ABOUT — SECTIONS
+======================================== */
+
+main > section {
+    padding: 5rem 0;
+    border-bottom: 1px solid #D8D5CC;
+}
+
+main > section:first-child {
+    padding-top: 2rem;
+}
+
+
+/* ========================================
+   HEADINGS
+======================================== */
+
+main h1 {
+    margin-bottom: 2rem;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+main h2 {
+    margin-bottom: 2rem;
+
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+
+/* ========================================
+   TEXT
+======================================== */
+
+main p {
+    max-width: 700px;
+
+    margin-bottom: 1.25rem;
+
+    color: #6B6B6B;
+
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   LIST
+======================================== */
+
+main ul {
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+}
+
+main li {
+    margin-bottom: 0.75rem;
+
+    color: #6B6B6B;
+
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FIRST SECTION
+======================================== */
+
+main > section:first-child p:first-of-type {
+    font-size: 1.25rem;
+    color: #252823;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 5rem 1.25rem;
+    }
+
+    main > section {
+        padding: 3.5rem 0;
+    }
+
+    main h1 {
+        font-size: 3rem;
+    }
+
+    main h2 {
+        font-size: 1.25rem;
+    }
+
+    main p {
+        font-size: 0.95rem;
+    }
+
+}

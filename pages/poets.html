@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poets | DPSRY</title>
+<link rel="stylesheet" href="../css/reset.css">
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/typography.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/pages.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/poet.css">
+</head>
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+        <nav>
+
+            <!-- Brand -->
+
+            <a href="../index.html">
+                DPSRY
+            </a>
+
+
+            <!-- Navigation -->
+
+            <div>
+
+                <a href="../index.html">
+                    HOME
+                </a>
+
+                <a href="./poets.html">
+                    POET
+                </a>
+
+                <a href="./poetry.html">
+                    POETRY
+                </a>
+
+                <a href="./voices.html">
+                    VOICE
+                </a>
+
+                <a href="./about.html">
+                    ABOUT
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         POETS
+    ======================================== -->
+
+    <main>
+
+        <h1>DPSRY</h1>
+
+        <h2>Poets</h2>
+
+        <!-- Ranked Poets will appear here -->
+        <div id="poets-list"></div>
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <!-- Brand -->
+
+        <p>
+            DPSRY
+        </p>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a href="./poets.html">
+                POET
+            </a>
+
+            <a href="./poetry.html">
+                POETRY
+            </a>
+
+            <a href="./voices.html">
+                VOICE
+            </a>
+
+            <a href="./about.html">
+                ABOUT
+            </a>
+
+        </nav>
+
+
+        <!-- Copyright -->
+
+        <p>
+            © DPSRY
+        </p>
+
+    </footer>
+
+
+    <!-- ========================================
+         LOAD DPSRY DATA
+    ======================================== -->
+
+    <script src="../js/data.js"></script>
+
+    <!-- Load DPSRY ranking functions -->
+    <script src="../js/ranking.js"></script>
+
+    <!-- Load Poet rendering functions -->
+    <script src="../js/poet.js"></script>
+
+
+    <script>
+
+        // Wait until DPSRY data has loaded
+        loadDPSRYData().then(() => {
+
+            // Calculate Poet statistics
+            const poetStatistics = getPoetStatistics(
+                DPSRY_DATA.poets,
+                DPSRY_DATA.poetry
+            );
+
+
+            // Rank all Poets
+            const rankedPoets = getRankedPoets(
+                poetStatistics
+            );
+
+
+            // Check the ranked Poets
+            console.log(
+                "Ranked Poets:",
+                rankedPoets
+            );
+
+
+            // Display the ranked Poets
+            renderPoets(rankedPoets);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

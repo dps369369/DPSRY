@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Poetry | DPSRY</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/typography.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/poetry.css">
+</head>
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+        <nav>
+
+            <!-- Brand -->
+
+            <a href="../index.html">
+                DPSRY
+            </a>
+
+
+            <!-- Navigation -->
+
+            <div>
+
+                <a href="../index.html">
+                    HOME
+                </a>
+
+                <a href="./poets.html">
+                    POET
+                </a>
+
+                <a href="./poetry.html">
+                    POETRY
+                </a>
+
+                <a href="./voices.html">
+                    VOICE
+                </a>
+
+                <a href="./about.html">
+                    ABOUT
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         POETRY DETAIL
+    ======================================== -->
+
+    <main>
+
+        <!-- POETRY HEADER -->
+
+        <header class="poetry-detail-header">
+
+            <h1 id="poetry-title"></h1>
+
+            <p id="poetry-poet"></p>
+
+            <p id="poetry-voice"></p>
+
+            <p id="poetry-rating"></p>
+
+        </header>
+
+
+        <!-- POETRY CONTENT -->
+
+        <article id="poetry-content"></article>
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <!-- Brand -->
+
+        <p>
+            DPSRY
+        </p>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="../index.html">
+                HOME
+            </a>
+
+            <a href="./poets.html">
+                POET
+            </a>
+
+            <a href="./poetry.html">
+                POETRY
+            </a>
+
+            <a href="./voices.html">
+                VOICE
+            </a>
+
+            <a href="./about.html">
+                ABOUT
+            </a>
+
+        </nav>
+
+
+        <!-- Copyright -->
+
+        <p>
+            © DPSRY
+        </p>
+
+    </footer>
+
+
+    <!-- ========================================
+         LOAD DPSRY DATA
+    ======================================== -->
+
+    <script src="../js/data.js"></script>
+
+
+    <script>
+
+        // Wait until DPSRY data has loaded
+
+        loadDPSRYData().then(() => {
+
+
+            // ========================================
+            // GET POETRY ID
+            // ========================================
+
+            const urlParams = new URLSearchParams(
+                window.location.search
+            );
+
+            const poetryId = urlParams.get("id");
+
+
+            // ========================================
+            // FIND POETRY
+            // ========================================
+
+            const poem = DPSRY_DATA.poetry.find(
+                poem => poem.id === poetryId
+            );
+
+
+            // Stop if the Poetry does not exist
+
+            if (!poem) {
+
+                document.body.innerHTML = `
+                    <h1>Poetry not found</h1>
+                `;
+
+                return;
+
+            }
+
+
+            // ========================================
+            // FIND POET
+            // ========================================
+
+            const poet = DPSRY_DATA.poets.find(
+                poet => poet.id === poem.poet
+            );
+
+
+            // ========================================
+            // FIND VOICE
+            // ========================================
+
+            const voice = DPSRY_DATA.voices.find(
+                voice => voice.id === poem.voice
+            );
+
+
+            // ========================================
+            // DISPLAY POETRY INFORMATION
+            // ========================================
+
+            document.getElementById(
+                "poetry-title"
+            ).textContent = poem.name;
+
+
+            document.getElementById(
+                "poetry-poet"
+            ).textContent =
+                `Poet: ${poet ? poet.name : "Unknown Poet"}`;
+
+
+            document.getElementById(
+                "poetry-voice"
+            ).textContent =
+                `Voice: ${voice ? voice.name : "Unknown Voice"}`;
+
+
+            document.getElementById(
+                "poetry-rating"
+            ).textContent =
+                `Rating: ${poem.rating}`;
+
+
+            document.getElementById(
+                "poetry-content"
+            ).textContent = poem.content;
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+/* ========================================
+   NAVIGATION
+======================================== */
+
+header {
+
+    width: 100%;
+
+}
+
+
+header nav {
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    padding: 2rem 1.5rem;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+
+}
+
+
+/* Brand */
+header nav > a {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #F4F1E8;
+}
+
+
+/* Navigation links */
+
+header nav div {
+
+    display: flex;
+
+    gap: 2rem;
+
+}
+
+
+header nav div a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #F4F1E8;
+}
+
+/* Hover */
+
+header nav div a:hover {
+    color: #18ed6a !important;
+}
+header {
+    background-color: #252823;
+}
+
+header a {
+    color: #F4F1E8;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background-color: #304A3A;
+    color: #F4F1E8;
+
+    padding: 4rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+/* footer brand */
+footer > p:first-child {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+footer nav {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+footer nav a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: #F4F1E8;
+}
+
+footer nav a:hover {
+    color: #18ED6A !important;
+}
+
+footer > p:last-child {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    color: #A8A59B;
+}

@@ -1,0 +1,58 @@
+{
+  "voices": [
+    {
+      "id": "longing",
+      "name": "Longing",
+      "description": "Presenting through intensity of connection.",
+      "symbol": ""
+    },
+    {
+      "id": "timeless",
+      "name": "Timeless",
+      "description": "Presenting through a sense of beyond-time.",
+      "symbol": ""
+    },
+    {
+      "id": "witness",
+      "name": "Witness",
+      "description": "Presenting without intervention.",
+      "symbol": ""
+    },
+    {
+      "id": "narrative",
+      "name": "Narrative",
+      "description": "Presenting with intervention.",
+      "symbol": ""
+    },
+    {
+      "id": "playful",
+      "name": "Playful",
+      "description": "Presenting through playfulness.",
+      "symbol": ""
+    },
+    {
+      "id": "embodied",
+      "name": "Embodied",
+      "description": "Presenting through bodily experience.",
+      "symbol": ""
+    },
+    {
+      "id": "aggressive",
+      "name": "Aggressive",
+      "description": "Presenting through attack.",
+      "symbol": ""
+    },
+    {
+      "id": "prophetic",
+      "name": "Prophetic",
+      "description": "Presenting through proclamation.",
+      "symbol": ""
+    },
+    {
+      "id": "interrogative",
+      "name": "Interrogative",
+      "description": "Presenting through interrogation.",
+      "symbol": ""
+    }
+  ]
+}

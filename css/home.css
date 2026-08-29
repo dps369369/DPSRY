@@ -1,0 +1,192 @@
+/* ========================================
+   HOME — HERO
+======================================== */
+
+main > section:first-child {
+
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 6rem 1.5rem;
+}
+
+#dps-poet-card {
+
+    max-width: 680px;
+
+}
+
+
+main > section:first-child > a {
+
+    display: inline-block;
+
+    margin-top: 2rem;
+
+    padding: 0.75rem 1.5rem;
+
+    border: 1px solid #252823;
+
+    color: #252823;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.08em;
+
+    transition: 250ms ease;
+}
+
+main > section:first-child > a:hover {
+
+    background-color: #252823;
+
+    color: #F4F1E8;
+
+}
+
+
+/* ========================================
+   HOME — DPS'S VISION
+======================================== */
+
+main > section:nth-child(2) {
+
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 6rem 1.5rem;
+
+}
+
+main > section:nth-child(2) h2,
+main > section:nth-child(2) p {
+
+    max-width: 680px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+main > section:nth-child(2) h2 {
+
+    margin-bottom: 2rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    font-weight: 600;
+
+}
+
+main > section:nth-child(2) p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.5rem;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* ========================================
+   HOME — DPS'S VISION FLAG
+======================================== */
+
+
+/* ========================================
+   DPS'S VISION — SEA SHAPE
+======================================== */
+
+/* ========================================
+   DPS'S VISION — SEA SHAPE
+======================================== */
+
+main > section:nth-child(2) p {
+
+    position: relative;
+
+    width: min(800px, 90%);
+
+    margin: 0 auto;
+
+    padding: 4rem 5rem;
+
+    background: #304A3A;
+
+    color: #F4F1E8;
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 88%,
+        95% 91%,
+        90% 88%,
+        85% 94%,
+        80% 89%,
+        75% 95%,
+        70% 90%,
+        65% 94%,
+        60% 88%,
+        55% 93%,
+        50% 89%,
+        45% 94%,
+        40% 88%,
+        35% 93%,
+        30% 89%,
+        25% 95%,
+        20% 89%,
+        15% 94%,
+        10% 89%,
+        5% 92%,
+        0 88%
+    );
+
+    animation: seaFloat 6s ease-in-out infinite;
+
+}
+
+
+/* ========================================
+   SEA MOVEMENT
+======================================== */
+
+@keyframes seaFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(8px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}

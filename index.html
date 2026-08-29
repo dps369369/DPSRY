@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>DPSRY</title>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="stylesheet" href="./css/variables.css">
+<link rel="stylesheet" href="./css/typography.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/pages.css">
+<link rel="stylesheet" href="./css/responsive.css">
+<link rel="stylesheet" href="./css/home.css">
+
+
+</head>
+
+<body>
+
+
+    <!-- ========================================
+         HEADER
+    ======================================== -->
+
+    <header>
+
+        <nav>
+
+            <!-- Brand -->
+
+            <a href="./index.html">
+                DPSRY
+            </a>
+
+
+            <!-- Navigation -->
+
+            <div>
+
+                <a href="./index.html">
+                    HOME
+                </a>
+
+                <a href="./pages/poets.html">
+                    POET
+                </a>
+
+                <a href="./pages/poetry.html">
+                    POETRY
+                </a>
+
+                <a href="./pages/voices.html">
+                    VOICE
+                </a>
+
+                <a href="./pages/about.html">
+                    ABOUT
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main>
+
+
+        <!-- ========================================
+             HERO
+        ======================================== -->
+
+        <section>
+
+
+            <!-- DPS POET CARD -->
+
+            <article id="dps-poet-card">
+
+                <!-- DPS data will appear here -->
+
+            </article>
+
+
+            <!-- ENTER DPS PROFILE -->
+
+            <a href="./pages/poet-detail.html?id=poet-013">
+
+                ENTER MY PROFILE
+
+            </a>
+
+
+        </section>
+
+
+        <!-- ========================================
+             DPS'S VISION OF POETRY
+        ======================================== -->
+
+        <section>
+
+            <h2>
+                DPS'S VISION OF POETRY
+            </h2>
+
+
+            <p>
+
+                [ "POETRY is higest form of languase , something let us to form us humanity.
+                lets recite poetry."]
+
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+
+        <!-- Brand -->
+
+        <p>
+            DPSRY
+        </p>
+
+
+        <!-- Footer Navigation -->
+
+        <nav>
+
+            <a href="./index.html">
+                HOME
+            </a>
+
+            <a href="./pages/poets.html">
+                POET
+            </a>
+
+            <a href="./pages/poetry.html">
+                POETRY
+            </a>
+
+            <a href="./pages/voices.html">
+                VOICE
+            </a>
+
+            <a href="./pages/about.html">
+                ABOUT
+            </a>
+
+        </nav>
+
+
+        <!-- Copyright -->
+
+        <p>
+            © DPSRY
+        </p>
+
+
+    </footer>
+
+
+    <!-- ========================================
+         LOAD DPSRY DATA
+    ======================================== -->
+
+    <script src="./js/data.js"></script>
+
+
+    <!-- ========================================
+         HOME PAGE LOGIC
+    ======================================== -->
+
+    <script>
+
+
+        // Wait until DPSRY data has loaded
+
+        loadDPSRYData().then(() => {
+
+
+            // ========================================
+            // FIND DPS
+            // ========================================
+
+            const dps = DPSRY_DATA.poets.find(
+
+                poet => poet.id === "poet-013"
+
+            );
+
+
+            // Stop if DPS cannot be found
+
+            if (!dps) {
+
+                console.error(
+                    "DPS was not found."
+                );
+
+                return;
+
+            }
+
+
+            // ========================================
+            // FIND DPS POET CARD
+            // ========================================
+
+            const dpsPoetCard =
+                document.getElementById(
+                    "dps-poet-card"
+                );
+
+
+            // ========================================
+            // DISPLAY DPS
+            // ========================================
+
+            dpsPoetCard.innerHTML = `
+
+                <div>
+
+                    <p>
+                        DPS POET
+                    </p>
+
+
+                    <h1>
+                        ${dps.name}
+                    </h1>
+
+
+                    <p>
+                        ${dps.introduction}
+                    </p>
+
+
+                </div>
+
+            `;
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
