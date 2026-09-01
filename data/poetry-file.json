@@ -1,0 +1,7 @@
+{
+  "poetry": {
+    "poetry-0001": "p1.md",
+    "poetry-0002": "p2.md",
+    "poetry-0004": "p4.md"
+  }
+}

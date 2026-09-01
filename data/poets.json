@@ -2,107 +2,27 @@
   "poets": [
     {
       "id": "poet-001",
-      "name": "Arin Vale",
-      "photo": "hell.png",
-      "birth": "1988",
-      "death": null,
-      "introduction": "A poet drawn toward memory, distance, and the intensity of human connection."
-    },
-    {
-      "id": "poet-002",
-      "name": "Mira Solen",
+      "name": "Rabindranath Tagore",
       "photo": "",
-      "birth": "1991",
-      "death": null,
-      "introduction": "A poet exploring silence, passing time, and the spaces between experience and memory."
+      "birth": "May 7, 1861",
+      "death": "August 7, 1941",
+      "introduction": ""
     },
     {
       "id": "poet-003",
-      "name": "Elias Rowan",
+      "name": "Jibanananda Das",
       "photo": "",
-      "birth": "1984",
-      "death": null,
-      "introduction": "A poet concerned with observation, reality, and the quiet act of witnessing."
+      "birth": "February 17, 1899",
+      "death": "October 22, 1954",
+      "introduction": ""
     },
     {
-      "id": "poet-004",
-      "name": "Nora Vey",
+      "id": "poet-369",
+      "name": "Mrittu",
       "photo": "",
-      "birth": "1995",
+      "birth": "July 4, 2007",
       "death": null,
-      "introduction": "A poet who transforms ordinary experiences into playful and unexpected forms."
-    },
-    {
-      "id": "poet-005",
-      "name": "Samir Arden",
-      "photo": "",
-      "birth": "1987",
-      "death": null,
-      "introduction": "A poet interested in the body, sensation, movement, and physical memory."
-    },
-    {
-      "id": "poet-006",
-      "name": "Lena Oris",
-      "photo": "who.png",
-      "birth": "1993",
-      "death": null,
-      "introduction": "A poet whose work moves through questions, uncertainty, and intellectual tension."
-    },
-    {
-      "id": "poet-007",
-      "name": "Theo Maren",
-      "photo": "",
-      "birth": "1981",
-      "death": null,
-      "introduction": "A poet who approaches language as a force of confrontation, resistance, and attack."
-    },
-    {
-      "id": "poet-008",
-      "name": "Iris Sen",
-      "photo": "",
-      "birth": "1990",
-      "death": null,
-      "introduction": "A poet fascinated by declarations, possibility, and visions of what may come."
-    },
-    {
-      "id": "poet-009",
-      "name": "Rayan Dast",
-      "photo": "",
-      "birth": "1986",
-      "death": null,
-      "introduction": "A poet who explores narrative, intervention, memory, and the construction of personal stories."
-    },
-    {
-      "id": "poet-010",
-      "name": "Elara Wynn",
-      "photo": "luffy.png",
-      "birth": "1997",
-      "death": null,
-      "introduction": "A poet drawn toward longing, absence, intimacy, and the desire for connection."
-    },
-    {
-      "id": "poet-011",
-      "name": "Jonas Reed",
-      "photo": "",
-      "birth": "1983",
-      "death": null,
-      "introduction": "A poet interested in timeless experience, existence, and moments that seem to escape chronology."
-    },
-    {
-      "id": "poet-012",
-      "name": "Sera Nolin",
-      "photo": "",
-      "birth": "1994",
-      "death": null,
-      "introduction": "A poet moving between observation, play, questioning, and the strange structures of everyday life."
-    },
-    {
-      "id": "poet-013",
-      "name": "DPS",
-      "photo": "dps.jpg",
-      "birth": "2007",
-      "death": null,
-      "introduction": "Poet and creator of DPSRY."
+      "introduction": ""
     }
   ]
 }

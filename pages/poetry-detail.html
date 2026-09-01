@@ -153,7 +153,7 @@
 
         // Wait until DPSRY data has loaded
 
-        loadDPSRYData().then(() => {
+        loadDPSRYData().then(async () => {
 
 
             // ========================================
@@ -181,8 +181,8 @@
             if (!poem) {
 
                 document.body.innerHTML = `
-                    <h1>Poetry not found</h1>
-                `;
+                <h1>Poetry not found</h1>
+            `;
 
                 return;
 
@@ -231,13 +231,116 @@
             document.getElementById(
                 "poetry-rating"
             ).textContent =
-                `Rating: ${poem.rating}`;
+                poem.rating !== null
+                    ? `Rating: ${poem.rating}`
+                    : "Rating: Not rated";
 
 
-            document.getElementById(
-                "poetry-content"
-            ).textContent = poem.content;
+            // ========================================
+            // FIND MARKDOWN FILE
+            // ========================================
 
+            const fileName =
+                DPSRY_DATA.poetryFiles[poetryId];
+
+
+            if (!fileName) {
+
+                document.getElementById(
+                    "poetry-content"
+                ).textContent =
+                    "Poetry content not found.";
+
+                return;
+
+            }
+
+
+            // ========================================
+            // DETECT WEBSITE PATH
+            // ========================================
+
+            const isGitHubPages =
+                window.location.hostname ===
+                "dps369369.github.io";
+
+
+            const projectPath =
+                isGitHubPages
+                    ? "/DPSRY"
+                    : "";
+
+
+            // ========================================
+            // LOAD MARKDOWN FILE
+            // ========================================
+
+            try {
+
+                const response = await fetch(
+                    `${projectPath}/poetry/${fileName}`
+                );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `Failed to load ${fileName}`
+                    );
+
+                }
+
+
+                const markdown =
+                    await response.text();
+
+
+                // ========================================
+                // REMOVE POETRY RATING FROM DISPLAY
+                // ========================================
+                const ratingIndex =
+                    markdown.search(
+                        /(?:^|\n)\s*#?\s*POETRY RATING\b/i
+                    );
+
+
+                const poetryOnly =
+                    ratingIndex !== -1
+                        ? markdown.substring(
+                            0,
+                            ratingIndex
+                        )
+                        : markdown;
+
+
+                // ========================================
+                // DISPLAY ONLY POETRY
+                // ========================================
+
+                document.getElementById(
+                    "poetry-content"
+                ).textContent =
+                    poetryOnly
+                        .replace(
+                            /^# /,
+                            ""
+                        )
+                        .trim();
+
+            } catch (error) {
+
+                console.error(
+                    "Poetry file loading failed:",
+                    error
+                );
+
+
+                document.getElementById(
+                    "poetry-content"
+                ).textContent =
+                    "Unable to load poetry.";
+
+            }
 
         });
 

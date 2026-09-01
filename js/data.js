@@ -8,7 +8,9 @@ const DPSRY_DATA = {
 
     poetry: [],
 
-    voices: []
+    voices: [],
+
+    poetryFiles: {}
 
 };
 
@@ -51,7 +53,9 @@ async function loadDPSRYData() {
 
             poetryResponse,
 
-            voicesResponse
+            voicesResponse,
+
+            poetryFilesResponse
 
         ] = await Promise.all([
 
@@ -68,6 +72,11 @@ async function loadDPSRYData() {
 
             fetch(
                 `${projectPath}/data/voices.json`
+            ),
+
+
+            fetch(
+                `${projectPath}/data/poetry-file.json`
             )
 
 
@@ -105,6 +114,15 @@ async function loadDPSRYData() {
         }
 
 
+        if (!poetryFilesResponse.ok) {
+
+            throw new Error(
+                "Failed to load poetry-file.json"
+            );
+
+        }
+
+
         // ========================================
         // CONVERT JSON
         // ========================================
@@ -119,6 +137,10 @@ async function loadDPSRYData() {
 
         const voicesData =
             await voicesResponse.json();
+
+
+        const poetryFilesData =
+            await poetryFilesResponse.json();
 
 
         // ========================================
@@ -136,6 +158,14 @@ async function loadDPSRYData() {
         DPSRY_DATA.voices =
             voicesData.voices;
 
+
+        DPSRY_DATA.poetryFiles =
+            poetryFilesData.poetry;
+
+
+        // ========================================
+        // CONFIRM DATA
+        // ========================================
 
         console.log(
             "DPSRY data loaded:",

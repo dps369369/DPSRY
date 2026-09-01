@@ -1,269 +1,28 @@
-
 {
   "poetry": [
     {
       "id": "poetry-0001",
-      "name": "The Distance Between Us",
-      "poet": "poet-001",
-      "content": "Some distances are measured not by miles, but by everything left unsaid.",
-      "rating": 96.5,
-      "voice": "longing"
+      "name": "বনলতা সেন",
+      "poet": "poet-003",
+      "rating": 95.5,
+      "voice": "witness",
+      "file": "p1.md"
     },
     {
       "id": "poetry-0002",
-      "name": "After the Last Light",
-      "poet": "poet-002",
-      "content": "The evening disappears, yet something in the fading light refuses to end.",
-      "rating": 91.8,
-      "voice": "timeless"
-    },
-    {
-      "id": "poetry-0003",
-      "name": "The Window",
-      "poet": "poet-003",
-      "content": "I watched the rain cross the glass and changed nothing.",
-      "rating": 94.2,
-      "voice": "witness"
+      "name": "সোনার তরী",
+      "poet": "poet-001",
+      "rating": 95,
+      "voice": "timeless",
+      "file": "p2.md"
     },
     {
       "id": "poetry-0004",
-      "name": "A Small Revolution",
-      "poet": "poet-004",
-      "content": "The moon forgot its lines, so the night invented another ending.",
-      "rating": 88.7,
-      "voice": "playful"
-    },
-    {
-      "id": "poetry-0005",
-      "name": "Skin Remembers",
-      "poet": "poet-005",
-      "content": "My hands remember places my mind has already forgotten.",
-      "rating": 93.6,
-      "voice": "embodied"
-    },
-    {
-      "id": "poetry-0006",
-      "name": "What Remains Unanswered",
-      "poet": "poet-006",
-      "content": "If the answer changes the question, what were we asking?",
-      "rating": 95.1,
-      "voice": "interrogative"
-    },
-    {
-      "id": "poetry-0007",
-      "name": "Against the Wall",
-      "poet": "poet-007",
-      "content": "I speak because silence has mistaken itself for victory.",
-      "rating": 89.9,
-      "voice": "aggressive"
-    },
-    {
-      "id": "poetry-0008",
-      "name": "Tomorrow Will Hear Us",
-      "poet": "poet-008",
-      "content": "What we build today will become the language of tomorrow.",
-      "rating": 92.4,
-      "voice": "prophetic"
-    },
-    {
-      "id": "poetry-0009",
-      "name": "The Story We Chose",
-      "poet": "poet-009",
-      "content": "I entered the story halfway through and decided where it should go.",
-      "rating": 87.5,
-      "voice": "narrative"
-    },
-    {
-      "id": "poetry-0010",
-      "name": "Come Back Slowly",
-      "poet": "poet-010",
-      "content": "Come back slowly; I want enough time to recognize the shape of you.",
-      "rating": 97.2,
-      "voice": "longing"
-    },
-    {
-      "id": "poetry-0011",
-      "name": "Before There Was a Clock",
-      "poet": "poet-011",
-      "content": "There was a moment before time named itself, and we were already there.",
-      "rating": 94.8,
-      "voice": "timeless"
-    },
-    {
-      "id": "poetry-0012",
-      "name": "At the Bus Stop",
-      "poet": "poet-012",
-      "content": "People arrived, people left, and I simply watched the road continue.",
-      "rating": 86.9,
-      "voice": "witness"
-    },
-    {
-      "id": "poetry-0013",
-      "name": "The Wrong Shoes",
-      "poet": "poet-004",
-      "content": "I wore two different shoes and called it fashion until someone believed me.",
-      "rating": 90.3,
-      "voice": "playful"
-    },
-    {
-      "id": "poetry-0014",
-      "name": "Pulse",
-      "poet": "poet-005",
-      "content": "The body speaks first; thought arrives later, carrying its explanation.",
-      "rating": 96.1,
-      "voice": "embodied"
-    },
-    {
-      "id": "poetry-0015",
-      "name": "Why Must We Leave?",
-      "poet": "poet-006",
-      "content": "Why do we call departure necessary when staying was never truly impossible?",
-      "rating": 93.7,
-      "voice": "interrogative"
-    },
-    {
-      "id": "poetry-0016",
-      "name": "No Permission",
-      "poet": "poet-007",
-      "content": "I stopped asking the door whether I was allowed to enter.",
-      "rating": 91.4,
-      "voice": "aggressive"
-    },
-    {
-      "id": "poetry-0017",
-      "name": "The Coming Season",
-      "poet": "poet-008",
-      "content": "A new season waits beyond the fear that tells us nothing will change.",
-      "rating": 95.6,
-      "voice": "prophetic"
-    },
-    {
-      "id": "poetry-0018",
-      "name": "A House With Seven Doors",
-      "poet": "poet-009",
-      "content": "Every door opened into another version of the same unfinished story.",
-      "rating": 89.6,
-      "voice": "narrative"
-    },
-    {
-      "id": "poetry-0019",
-      "name": "Your Empty Chair",
-      "poet": "poet-001",
-      "content": "The chair remains where you left it, as though absence needs furniture.",
-      "rating": 94.9,
-      "voice": "witness"
-    },
-    {
-      "id": "poetry-0020",
-      "name": "No Beginning",
-      "poet": "poet-002",
-      "content": "Some things do not begin; they simply become visible.",
-      "rating": 90.7,
-      "voice": "timeless"
-    },
-    {
-      "id": "poetry-0021",
-      "name": "Rain on the Field",
-      "poet": "poet-003",
-      "content": "The field received the rain without complaint or celebration.",
-      "rating": 92.1,
-      "voice": "witness"
-    },
-    {
-      "id": "poetry-0022",
-      "name": "The Moon Is Late",
-      "poet": "poet-012",
-      "content": "The moon arrived late and blamed traffic in the clouds.",
-      "rating": 85.8,
-      "voice": "playful"
-    },
-    {
-      "id": "poetry-0023",
-      "name": "Gravity",
-      "poet": "poet-005",
-      "content": "My feet know the earth before my mind remembers its name.",
-      "rating": 94.3,
-      "voice": "embodied"
-    },
-    {
-      "id": "poetry-0024",
-      "name": "Who Are We Becoming?",
-      "poet": "poet-006",
-      "content": "Who are we becoming when every answer makes another question necessary?",
-      "rating": 97.8,
-      "voice": "interrogative"
-    },
-    {
-      "id": "poetry-0025",
-      "name": "Break the Silence",
-      "poet": "poet-007",
-      "content": "Let the silence break before it convinces us that it was ever sacred.",
-      "rating": 93.2,
-      "voice": "aggressive"
-    },
-    {
-      "id": "poetry-0026",
-      "name": "The First Morning",
-      "poet": "poet-008",
-      "content": "One morning the world will wake expecting us to have changed it.",
-      "rating": 96.7,
-      "voice": "prophetic"
-    },
-    {
-      "id": "poetry-0027",
-      "name": "The Man Who Returned",
-      "poet": "poet-009",
-      "content": "He returned to the same street carrying a story that no longer belonged there.",
-      "rating": 91.9,
-      "voice": "narrative"
-    },
-    {
-      "id": "poetry-0028",
-      "name": "Almost Home",
-      "poet": "poet-010",
-      "content": "I have crossed every road except the one that brings me back to you.",
-      "rating": 98.4,
-      "voice": "longing"
-    },
-    {
-      "id": "poetry-0029",
-      "name": "Outside Time",
-      "poet": "poet-011",
-      "content": "The stars do not remember yesterday, yet somehow they remember us.",
-      "rating": 95.9,
-      "voice": "timeless"
-    },
-    {
-      "id": "poetry-0030",
-      "name": "The Last Witness",
-      "poet": "poet-003",
-      "content": "I saw what happened and carried the memory without changing the truth.",
-      "rating": 96.5,
-      "voice": "witness"
-    },
-    {
-      "id": "poetry-0031",
-      "name": "The Death Is Me and Me Is Death",
-      "poet": "poet-013",
-      "content": "the death is me and me is death",
-      "rating": 100,
-      "voice": "witness"
-    },
-    {
-      "id": "poetry-0032",
-      "name": "How How I Be Be",
-      "poet": "poet-013",
-      "content": "how how i be be",
-      "rating": 100,
-      "voice": "interrogative"
-    },
-    {
-      "id": "poetry-0033",
-      "name": "Let's Be Mad",
-      "poet": "poet-013",
-      "content": "lets be mad",
-      "rating": 100,
-      "voice": "playful"
+      "name": "অসীমের মাঝি",
+      "poet": "poet-369",
+      "rating": 80,
+      "voice": "longing",
+      "file": "p4.md"
     }
   ]
 }
