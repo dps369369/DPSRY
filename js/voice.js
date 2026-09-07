@@ -10,28 +10,42 @@ function renderVoices(voices) {
         "voices-list"
     );
 
-    // Clear the container
+    // Clear the container before rendering
     voicesList.innerHTML = "";
 
 
     // Go through every ranked Voice
     voices.forEach(voice => {
 
+        // Create the Voice card
         voicesList.innerHTML += `
             <article class="voice-card">
 
-                <h3>
+                <!-- Voice Rank -->
+                <span class="voice-rank">
+                    #${String(voice.rank).padStart(2, "0")}
+                </span>
+
+
+                <!-- Voice Name -->
+                <h3 class="voice-name">
+
                     <a href="./voice-detail.html?id=${voice.id}">
-                        #${voice.rank} — ${voice.name}
+                        ${voice.name}
                     </a>
+
                 </h3>
 
-                <p>
+
+                <!-- Voice Description -->
+                <p class="voice-description">
                     ${voice.description}
                 </p>
 
-                <p>
-                    Poetry: ${voice.poetryCount}
+
+                <!-- Poetry Count -->
+                <p class="voice-count">
+                    ${voice.poetryCount} Poetry
                 </p>
 
             </article>
