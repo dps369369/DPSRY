@@ -107,9 +107,9 @@
 
             <p>
 
-LANGUAGE IS BROKEN, AND THIS IS WHY POETRY WAS BORN: 
-TO SERVE HUMANITY BY ALLOWING PEOPLE TO EXPRESS THEMSELVES FULLY. 
-FOR THIS REASON, DPS WILL GIVE HIS BEST SO THAT POETRY CAN STAY ALIVE IN BANGLA.
+                LANGUAGE IS BROKEN, AND THIS IS WHY POETRY WAS BORN:
+                TO SERVE HUMANITY BY ALLOWING PEOPLE TO EXPRESS THEMSELVES FULLY.
+                FOR THIS REASON, DPS WILL GIVE HIS BEST SO THAT POETRY CAN STAY ALIVE IN BANGLA.
 
             </p>
 
@@ -173,76 +173,73 @@ FOR THIS REASON, DPS WILL GIVE HIS BEST SO THAT POETRY CAN STAY ALIVE IN BANGLA.
     <!-- ========================================
          LOAD DPSRY DATA
     ======================================== -->
-<!-- DPSRY data -->
-<script src="./js/data.js"></script>
+    <!-- DPSRY data -->
+    <script src="./js/data.js"></script>
 
-<!-- DPSRY ranking functions -->
-<script src="./js/ranking.js"></script>
+    <!-- DPSRY ranking functions -->
+    <script src="./js/ranking.js"></script>
 
-<!-- GSAP animation library -->
-<script src="./node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="./vendor/gsap.min.js"></script>
+    <script src="./js/animation.js"></script>
 
-<!-- DPSRY animations -->
-<script src="./js/animation.js"></script>
+    <script>
 
-   <script>
+        loadDPSRYData().then(() => {
 
-    loadDPSRYData().then(() => {
+            // ========================================
+            // CALCULATE POET STATISTICS
+            // ========================================
 
-        // ========================================
-        // CALCULATE POET STATISTICS
-        // ========================================
-
-        const poetStatistics = getPoetStatistics(
-            DPSRY_DATA.poets,
-            DPSRY_DATA.poetry
-        );
-
-
-        // ========================================
-        // CALCULATE POET RANKINGS
-        // ========================================
-
-        const rankedPoets = getRankedPoets(
-            poetStatistics
-        );
-
-
-        // ========================================
-        // FIND MRITTU
-        // ========================================
-
-        const mrittu = rankedPoets.find(
-            poet => poet.id === "poet-369"
-        );
-
-
-        // Stop if Mrittu does not exist
-        if (!mrittu) {
-
-            console.error(
-                "Mrittu was not found."
-            );
-
-            return;
-        }
-
-
-        // ========================================
-        // FIND HOME POET CARD
-        // ========================================
-
-        const dpsPoetCard =
-            document.getElementById(
-                "dps-poet-card"
+            const poetStatistics = getPoetStatistics(
+                DPSRY_DATA.poets,
+                DPSRY_DATA.poetry
             );
 
 
-        // ========================================
-        // DISPLAY MRITTU
-        // ========================================
+            // ========================================
+            // CALCULATE POET RANKINGS
+            // ========================================
 
-        dpsPoetCard.innerHTML = `
+            const rankedPoets = getRankedPoets(
+                poetStatistics
+            );
+
+
+            // ========================================
+            // FIND MRITTU
+            // ========================================
+
+            const mrittu = rankedPoets.find(
+                poet => poet.id === "poet-369"
+            );
+
+
+            // Stop if Mrittu does not exist
+            if (!mrittu) {
+
+                console.error(
+                    "Mrittu was not found."
+                );
+
+                return;
+            }
+
+
+            // ========================================
+            // FIND HOME POET CARD
+            // ========================================
+
+            const dpsPoetCard =
+                document.getElementById(
+                    "dps-poet-card"
+                );
+
+
+            // ========================================
+            // DISPLAY MRITTU
+            // ========================================
+
+            dpsPoetCard.innerHTML = `
 
             <a href="./pages/poet-detail.html?id=${mrittu.id}">
 
@@ -293,13 +290,13 @@ FOR THIS REASON, DPS WILL GIVE HIS BEST SO THAT POETRY CAN STAY ALIVE IN BANGLA.
 
         `;
 
-        // FUNCTION
+            // FUNCTION
 
-        animateDPSPoetCard();
+            animateDPSPoetCard();
 
-    });
+        });
 
-</script>
+    </script>
 
 
 </body>
