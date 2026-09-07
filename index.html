@@ -5,18 +5,13 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>DPSRY</title>
-<link rel="stylesheet" href="./css/reset.css">
-<link rel="stylesheet" href="./css/variables.css">
-<link rel="stylesheet" href="./css/typography.css">
-<link rel="stylesheet" href="./css/layout.css">
-<link rel="stylesheet" href="./css/components.css">
-<link rel="stylesheet" href="./css/pages.css">
-<link rel="stylesheet" href="./css/responsive.css">
-<link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/home.css">
 
 
 </head>
@@ -95,12 +90,6 @@
 
             <!-- ENTER DPS PROFILE -->
 
-            <a href="./pages/poet-detail.html?id=poet-013">
-
-                ENTER MY PROFILE
-
-            </a>
-
 
         </section>
 
@@ -118,8 +107,9 @@
 
             <p>
 
-                [ "POETRY is higest form of languase , something let us to form us humanity.
-                lets recite poetry."]
+LANGUAGE IS BROKEN, AND THIS IS WHY POETRY WAS BORN: 
+TO SERVE HUMANITY BY ALLOWING PEOPLE TO EXPRESS THEMSELVES FULLY. 
+FOR THIS REASON, DPS WILL GIVE HIS BEST SO THAT POETRY CAN STAY ALIVE IN BANGLA.
 
             </p>
 
@@ -183,88 +173,133 @@
     <!-- ========================================
          LOAD DPSRY DATA
     ======================================== -->
+<!-- DPSRY data -->
+<script src="./js/data.js"></script>
 
-    <script src="./js/data.js"></script>
+<!-- DPSRY ranking functions -->
+<script src="./js/ranking.js"></script>
+
+<!-- GSAP animation library -->
+<script src="./node_modules/gsap/dist/gsap.min.js"></script>
+
+<!-- DPSRY animations -->
+<script src="./js/animation.js"></script>
+
+   <script>
+
+    loadDPSRYData().then(() => {
+
+        // ========================================
+        // CALCULATE POET STATISTICS
+        // ========================================
+
+        const poetStatistics = getPoetStatistics(
+            DPSRY_DATA.poets,
+            DPSRY_DATA.poetry
+        );
 
 
-    <!-- ========================================
-         HOME PAGE LOGIC
-    ======================================== -->
+        // ========================================
+        // CALCULATE POET RANKINGS
+        // ========================================
 
-    <script>
-
-
-        // Wait until DPSRY data has loaded
-
-        loadDPSRYData().then(() => {
+        const rankedPoets = getRankedPoets(
+            poetStatistics
+        );
 
 
-            // ========================================
-            // FIND DPS
-            // ========================================
+        // ========================================
+        // FIND MRITTU
+        // ========================================
 
-            const dps = DPSRY_DATA.poets.find(
+        const mrittu = rankedPoets.find(
+            poet => poet.id === "poet-369"
+        );
 
-                poet => poet.id === "poet-013"
 
+        // Stop if Mrittu does not exist
+        if (!mrittu) {
+
+            console.error(
+                "Mrittu was not found."
+            );
+
+            return;
+        }
+
+
+        // ========================================
+        // FIND HOME POET CARD
+        // ========================================
+
+        const dpsPoetCard =
+            document.getElementById(
+                "dps-poet-card"
             );
 
 
-            // Stop if DPS cannot be found
+        // ========================================
+        // DISPLAY MRITTU
+        // ========================================
 
-            if (!dps) {
+        dpsPoetCard.innerHTML = `
 
-                console.error(
-                    "DPS was not found."
-                );
+            <a href="./pages/poet-detail.html?id=${mrittu.id}">
 
-                return;
+                <!-- Poet Photo -->
 
-            }
-
-
-            // ========================================
-            // FIND DPS POET CARD
-            // ========================================
-
-            const dpsPoetCard =
-                document.getElementById(
-                    "dps-poet-card"
-                );
+                <img
+                    src="./assets/poets/${mrittu.photo}"
+                    alt="${mrittu.name}"
+                >
 
 
-            // ========================================
-            // DISPLAY DPS
-            // ========================================
+                <!-- Poet Rank -->
 
-            dpsPoetCard.innerHTML = `
+                <span class="poet-rank">
 
-                <div>
+                    #${String(mrittu.rank).padStart(2, "0")}
 
-                    <p>
-                        DPS POET
-                    </p>
+                </span>
 
 
-                    <h1>
-                        ${dps.name}
-                    </h1>
+                <!-- Poet Name -->
+
+                <h3>
+
+                    ${mrittu.name}
+
+                </h3>
 
 
-                    <p>
-                        ${dps.introduction}
-                    </p>
+                <!-- Poet Rating -->
+
+                <p>
+
+                    Rating: ${mrittu.averageRating}
+
+                </p>
 
 
-                </div>
+                <!-- Poetry Count -->
 
-            `;
+                <p>
 
+                    Poetry: ${mrittu.poetryCount}
 
-        });
+                </p>
 
+            </a>
 
-    </script>
+        `;
+
+        // FUNCTION
+
+        animateDPSPoetCard();
+
+    });
+
+</script>
 
 
 </body>

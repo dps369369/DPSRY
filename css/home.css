@@ -15,43 +15,47 @@ main > section:first-child {
     text-align: center;
 
     padding: 6rem 1.5rem;
+
 }
+
+
+/* ========================================
+   DPS POET CARD
+======================================== */
 
 #dps-poet-card {
 
-    max-width: 680px;
+    width: min(420px, 100%);
 
-}
-
-
-main > section:first-child > a {
-
-    display: inline-block;
-
-    margin-top: 2rem;
-
-    padding: 0.75rem 1.5rem;
+    padding: 2rem;
 
     border: 1px solid #252823;
 
-    color: #252823;
+    background-color: #F4F1E8;
 
-    font-family: "Inter", sans-serif;
+    transition:
+        transform 250ms ease,
+        box-shadow 250ms ease;
 
-    font-size: 0.8rem;
-
-    letter-spacing: 0.08em;
-
-    transition: 250ms ease;
-}
-
-main > section:first-child > a:hover {
-
-    background-color: #252823;
-
-    color: #F4F1E8;
+    cursor: pointer;
 
 }
+
+
+
+#dps-poet-card:hover {
+    /* GSAP handles the movement */
+}
+
+
+
+
+
+
+
+
+
+
 
 
 /* ========================================
@@ -71,6 +75,7 @@ main > section:nth-child(2) {
 
 }
 
+
 main > section:nth-child(2) h2,
 main > section:nth-child(2) p {
 
@@ -80,6 +85,11 @@ main > section:nth-child(2) p {
     margin-right: auto;
 
 }
+
+
+/* ========================================
+   VISION TITLE
+======================================== */
 
 main > section:nth-child(2) h2 {
 
@@ -93,6 +103,11 @@ main > section:nth-child(2) h2 {
 
 }
 
+
+/* ========================================
+   VISION TEXT
+======================================== */
+
 main > section:nth-child(2) p {
 
     font-family: "Cormorant Garamond", serif;
@@ -103,16 +118,6 @@ main > section:nth-child(2) p {
 
 }
 
-
-
-/* ========================================
-   HOME — DPS'S VISION FLAG
-======================================== */
-
-
-/* ========================================
-   DPS'S VISION — SEA SHAPE
-======================================== */
 
 /* ========================================
    DPS'S VISION — SEA SHAPE
