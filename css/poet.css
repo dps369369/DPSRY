@@ -16,6 +16,7 @@
 
 }
 
+
 .poet-card {
 
     padding: 2rem;
@@ -28,124 +29,13 @@
 
 }
 
+
 .poet-card:hover {
 
     transform: translateY(-6px);
 
 }
 
-
-/* ========================================
-   POET DETAIL
-======================================== */
-
-main {
-
-    max-width: 1000px;
-
-    margin: 0 auto;
-
-    padding: 6rem 1.5rem;
-
-}
-
-#poet-name {
-
-    font-size: 4rem;
-
-    margin-bottom: 1rem;
-
-}
-
-#poet-rank,
-#poet-rating,
-#poet-poetry-count {
-
-    margin-bottom: 0.5rem;
-
-}
-
-#poet-introduction {
-
-    max-width: 650px;
-
-    margin-top: 2rem;
-
-    line-height: 1.7;
-
-}
-
-main h2 {
-
-    margin-top: 6rem;
-
-    margin-bottom: 2rem;
-
-    font-size: 2rem;
-
-}
-
-#poet-poetry-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 1rem;
-
-}
-
-.poetry-card {
-
-    padding: 1.5rem;
-
-    border: 1px solid #252823;
-
-    transition: 250ms ease;
-
-}
-
-.poetry-card:hover {
-
-    transform: translateX(6px);
-
-}
-
-/* ========================================
-   POET PHOTO
-======================================== */
-
-#poet-photo {
-
-    width: 220px;
-
-    height: 220px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-
-    margin: 0 auto 2rem;
-
-}
-
-/* ========================================
-   POET DETAIL — PROFILE
-======================================== */
-
-main {
-
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    padding: 6rem 1.5rem;
-
-    text-align: center;
-
-}
 
 /* ========================================
    POET DETAIL — PROFILE
@@ -190,6 +80,8 @@ main {
 ======================================== */
 
 #poet-name {
+
+    font-size: 4rem;
 
     margin-bottom: 3rem;
 
@@ -241,7 +133,9 @@ main {
 }
 
 
-/* LABEL */
+/* ========================================
+   DATA LABEL
+======================================== */
 
 .poet-data-label {
 
@@ -256,7 +150,9 @@ main {
 }
 
 
-/* VALUE */
+/* ========================================
+   DATA VALUE
+======================================== */
 
 #poet-birth,
 #poet-death,
@@ -399,5 +295,161 @@ main h2 {
     color: #6B6B6B;
 
     font-size: 0.9rem;
+
+}
+
+
+/* ========================================
+   POET NAME — HOVER
+======================================== */
+
+.poet-card h3 a {
+
+    position: relative;
+
+    display: inline-block;
+
+    color: #252823;
+
+    text-decoration: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* ========================================
+   GREEN + TEXT LIFT
+======================================== */
+
+.poet-card h3 a:hover {
+
+    color: #4F6F52;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ========================================
+   ARROW
+======================================== */
+
+.poet-card h3 a::after {
+
+    content: "→";
+
+    display: inline-block;
+
+    margin-left: 0.5rem;
+
+    opacity: 0;
+
+    transform: translateX(-6px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+.poet-card h3 a:hover::after {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+/* ========================================
+   POET RANK
+======================================== */
+
+.poet-rank {
+
+    display: inline-block;
+
+    position: relative;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    color: #4F6F52;
+
+    margin-top: 1rem;
+
+    margin-bottom: 2rem;
+
+    z-index: 1;
+
+}
+
+
+/* ========================================
+   POET RANK — SOLAR GLOW
+======================================== */
+
+.poet-rank::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 220%;
+    height: 220%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(79, 111, 82, 0.25) 0%,
+        rgba(79, 111, 82, 0.12) 35%,
+        rgba(79, 111, 82, 0) 70%
+    );
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+/* ========================================
+   POET RANK — SOLAR RAYS
+======================================== */
+
+.poet-rank::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #4F6F52;
+
+    font-size: 3rem;
+
+    opacity: 0.18;
+
+    z-index: -1;
+
+    pointer-events: none;
 
 }

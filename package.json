@@ -1,0 +1,24 @@
+{
+  "name": "dpsry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dps369369/DPSRY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dps369369/DPSRY/issues"
+  },
+  "homepage": "https://github.com/dps369369/DPSRY#readme",
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

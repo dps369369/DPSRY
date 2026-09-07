@@ -3,7 +3,7 @@
     {
       "id": "poet-001",
       "name": "Rabindranath Tagore",
-      "photo": "robin.jpg",
+      "photo": "./robindro.jpg",
       "birth": "May 7, 1861",
       "death": "August 7, 1941",
       "introduction": ""
@@ -11,7 +11,7 @@
     {
       "id": "poet-003",
       "name": "Jibanananda Das",
-      "photo": "./jibon.jpg",
+      "photo": "./jibanando.jpg",
       "birth": "February 17, 1899",
       "death": "October 22, 1954",
       "introduction": ""
@@ -19,7 +19,7 @@
     {
       "id": "poet-369",
       "name": "Mrittu",
-      "photo": "./dps.jpg",
+      "photo": "./mrittu.jpg",
       "birth": "July 4, 2007",
       "death": null,
       "introduction": ""

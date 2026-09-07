@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Poets | DPSRY</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/variables.css">
-<link rel="stylesheet" href="../css/typography.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/pages.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/poet.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/poet.css">
 </head>
 
 <body>
@@ -130,19 +126,20 @@
     <!-- ========================================
          LOAD DPSRY DATA
     ======================================== -->
-
     <script src="../js/data.js"></script>
 
-    <!-- Load DPSRY ranking functions -->
     <script src="../js/ranking.js"></script>
 
-    <!-- Load Poet rendering functions -->
     <script src="../js/poet.js"></script>
 
+    <!-- Load GSAP -->
+    <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+
+    <!-- Load DPSRY animations -->
+    <script src="../js/animation.js"></script>
 
     <script>
 
-        // Wait until DPSRY data has loaded
         loadDPSRYData().then(() => {
 
             // Calculate Poet statistics
@@ -151,12 +148,10 @@
                 DPSRY_DATA.poetry
             );
 
-
             // Rank all Poets
             const rankedPoets = getRankedPoets(
                 poetStatistics
             );
-
 
             // Check the ranked Poets
             console.log(
@@ -164,9 +159,13 @@
                 rankedPoets
             );
 
-
             // Display the ranked Poets
             renderPoets(rankedPoets);
+
+            // Animate the Poet rank badges
+            animatePoetRanks();
+            animatePoetCards();
+            animatePoetRankSolar();
 
         });
 
