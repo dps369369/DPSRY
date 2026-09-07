@@ -1,6 +1,76 @@
 /* ========================================
-   DPSRY — PAGE
+   DPSRY — LAYOUT
 ======================================== */
+
+
+/* ========================================
+   PAGE
+======================================== */
+
 body {
-  background-color:#EAE5D8;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #EAE5D8;
+    color: #252823;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    width: 100%;
+}
+
+header nav {
+    width: min(1200px, calc(100% - 3rem));
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.5rem 0;
+}
+
+
+/* ========================================
+   MAIN
+======================================== */
+
+main {
+    width: 100%;
+    flex: 1;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    width: 100%;
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+/* ========================================
+   GLOBAL CONTENT WIDTH
+======================================== */
+
+.page-width {
+    width: min(1200px, calc(100% - 3rem));
+
+    margin-left: auto;
+    margin-right: auto;
 }
