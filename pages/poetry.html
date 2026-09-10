@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Poetry | DPSRY</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/variables.css">
-<link rel="stylesheet" href="../css/typography.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/pages.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/poetry.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/poetry.css">
 </head>
 
 <body>
@@ -139,22 +135,34 @@
     <script src="../js/poetry.js"></script>
 
 
-    <script>
+ <script>
 
-        // Wait until all DPSRY data has loaded
-        loadDPSRYData().then(() => {
+    // Wait until all DPSRY data has loaded
+    loadDPSRYData().then(() => {
 
-            // Rank all Poetry
-            const rankedPoetry = getRankedPoetry(
-                DPSRY_DATA.poetry
-            );
+        // Calculate each poet's statistics,
+        // including their average Poetry rating.
+        const poetStatistics = getPoetStatistics(
+            DPSRY_DATA.poets,
+            DPSRY_DATA.poetry
+        );
 
-            // Display the ranked Poetry
-            renderPoetry(rankedPoetry);
 
-        });
+        // Rank all Poetry.
+        // If Poetry ratings are equal,
+        // poet average rating will be used as the tie-breaker.
+        const rankedPoetry = getRankedPoetry(
+            DPSRY_DATA.poetry,
+            poetStatistics
+        );
 
-    </script>
+
+        // Display the ranked Poetry
+        renderPoetry(rankedPoetry);
+
+    });
+
+</script>
 
 </body>
 

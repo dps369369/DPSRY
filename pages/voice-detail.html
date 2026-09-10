@@ -6,14 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Voice | DPSRY</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/variables.css">
-<link rel="stylesheet" href="../css/typography.css">
-<link rel="stylesheet" href="../css/layout.css">
-<link rel="stylesheet" href="../css/components.css">
-<link rel="stylesheet" href="../css/pages.css">
-<link rel="stylesheet" href="../css/responsive.css">
-<link rel="stylesheet" href="../css/voice.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/voice.css">
 </head>
 
 <body>
@@ -252,9 +248,28 @@
             // ========================================
             // GLOBAL POETRY RANKING
             // ========================================
+            // ========================================
+            // POET STATISTICS
+            // ========================================
 
-            const rankedPoetry = getRankedPoetry(
+            // Calculate each Poet's average Poetry rating.
+            // This is needed as the tie-breaker for Poetry ranking.
+            const poetStatistics = getPoetStatistics(
+                DPSRY_DATA.poets,
                 DPSRY_DATA.poetry
+            );
+
+
+            // ========================================
+            // GLOBAL POETRY RANKING
+            // ========================================
+
+            // Rank Poetry by:
+            // 1. Poetry rating
+            // 2. Poet average rating if Poetry ratings are equal
+            const rankedPoetry = getRankedPoetry(
+                DPSRY_DATA.poetry,
+                poetStatistics
             );
 
 

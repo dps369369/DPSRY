@@ -7,12 +7,8 @@
 
     <title>Poet | DPSRY</title>
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/typography.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/pages.css">
-    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/poet.css">
 </head>
 
@@ -355,7 +351,8 @@
             // ========================================
 
             const rankedPoetry = getRankedPoetry(
-                DPSRY_DATA.poetry
+                DPSRY_DATA.poetry,
+                poetStatistics
             );
 
 

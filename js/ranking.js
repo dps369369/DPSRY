@@ -3,12 +3,62 @@
 // ========================================
 
 // Rank Poetry by rating — highest rating comes first
-function getRankedPoetry(poetry) {
+function getRankedPoetry(poetry, poetStatistics) {
 
     // First, sort Poetry from highest rating to lowest
-    const sortedPoetry = [...poetry].sort(
-        (a, b) => b.rating - a.rating
-    );
+    const sortedPoetry = [...poetry].sort((a, b) => {
+
+        // ========================================
+        // 1. POETRY RATING
+        // ========================================
+
+        // If Poetry ratings are different,
+        // higher Poetry rating comes first.
+        if (b.rating !== a.rating) {
+            return b.rating - a.rating;
+        }
+
+
+        // ========================================
+        // 2. POET AVERAGE RATING
+        // ========================================
+
+        // Find the poet who wrote each Poetry.
+        const poetA = poetStatistics.find(
+            poet => poet.id === a.poet
+        );
+
+        const poetB = poetStatistics.find(
+            poet => poet.id === b.poet
+        );
+
+
+        // Get each poet's average rating.
+        const averageA = poetA
+            ? poetA.averageRating
+            : 0;
+
+        const averageB = poetB
+            ? poetB.averageRating
+            : 0;
+
+
+        // If Poetry ratings are equal,
+        // the poet with the higher average rating comes first.
+        if (averageB !== averageA) {
+            return averageB - averageA;
+        }
+
+
+        // ========================================
+        // 3. SAME RESULT
+        // ========================================
+
+        // If both Poetry rating and poet average
+        // are equal, keep their existing order.
+        return 0;
+    });
+
 
     // Then give every Poetry its rank
     return sortedPoetry.map((poem, index) => {
