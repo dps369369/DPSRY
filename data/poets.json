@@ -9,6 +9,14 @@
       "introduction": ""
     },
     {
+      "id": "poet-002",
+      "name": "Kazi Nazrul Islam",
+      "photo": "./nuzrul.jpg",
+      "birth": "May 24, 1899",
+      "death": "August 29, 1976",
+      "introduction": ""
+    },
+    {
       "id": "poet-003",
       "name": "Jibanananda Das",
       "photo": "./jibanando.jpg",
