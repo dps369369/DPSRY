@@ -19,7 +19,10 @@ function renderVoices(voices) {
 
         // Create the Voice card
         voicesList.innerHTML += `
-            <article class="voice-card">
+            <article
+                class="voice-card"
+                onclick="window.location.href='./voice-detail.html?id=${voice.id}'"
+            >
 
                 <!-- Voice Rank -->
                 <span class="voice-rank">

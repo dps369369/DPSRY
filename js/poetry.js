@@ -30,13 +30,17 @@ function renderPoetry(poetry) {
 
         // Display the Poetry information
         poetryList.innerHTML += `
-            <article class="poetry-card">
+            <article
+                class="poetry-card"
+                onclick="window.location.href='./poetry-detail.html?id=${poem.id}'"
+            >
 
                 <h3>
-    <a href="./poetry-detail.html?id=${poem.id}">
-        #${poem.rank} — ${poem.name}
-    </a>
-</h3>
+                    <a href="./poetry-detail.html?id=${poem.id}">
+                        #${poem.rank} — ${poem.name}
+                    </a>
+                </h3>
+
                 <p>
                     Poet: ${poet ? poet.name : "Unknown Poet"}
                 </p>

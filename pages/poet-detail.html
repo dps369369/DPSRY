@@ -249,12 +249,11 @@
 
 
             // Stop if Poet does not exist
-
             if (!poet) {
 
                 document.body.innerHTML = `
-                    <h1>Poet not found</h1>
-                `;
+                <h1>Poet not found</h1>
+            `;
 
                 return;
 
@@ -277,7 +276,6 @@
 
 
             // Find this Poet's ranking information
-
             const rankedPoet = rankedPoets.find(
                 rankedPoet => rankedPoet.id === poetId
             );
@@ -347,6 +345,8 @@
                 "poet-introduction"
             ).textContent =
                 poet.introduction;
+
+
             // ========================================
             // GLOBAL POETRY RANKING
             // ========================================
@@ -359,7 +359,6 @@
 
             // Find this Poet's Poetry
             // while keeping the GLOBAL ranks
-
             const poetPoetry = rankedPoetry.filter(
                 poem => poem.poet === poetId
             );
@@ -377,22 +376,25 @@
             poetPoetry.forEach(poem => {
 
                 poetryList.innerHTML += `
-                    <article class="poetry-card">
+                <article
+                    class="poetry-card"
+                    onclick="window.location.href='./poetry-detail.html?id=${poem.id}'"
+                >
 
-                        <h3>
+                    <h3>
 
-                            <a href="./poetry-detail.html?id=${poem.id}">
-                                #${poem.rank} — ${poem.name}
-                            </a>
+                        <a href="./poetry-detail.html?id=${poem.id}">
+                            #${poem.rank} — ${poem.name}
+                        </a>
 
-                        </h3>
+                    </h3>
 
-                        <p>
-                            Rating: ${poem.rating}
-                        </p>
+                    <p>
+                        Rating: ${poem.rating}
+                    </p>
 
-                    </article>
-                `;
+                </article>
+            `;
 
             });
 

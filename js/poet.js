@@ -18,7 +18,10 @@ function renderPoets(poets) {
     poets.forEach(poet => {
 
         poetsList.innerHTML += `
-            <article class="poet-card">
+            <article
+                class="poet-card"
+                onclick="window.location.href='./poet-detail.html?id=${poet.id}'"
+            >
 
                 <!-- Poet Photo -->
                 <img

@@ -154,6 +154,7 @@
     <script src="../js/ranking.js"></script>
 
 
+
     <script>
 
         // Wait until all DPSRY data has loaded
@@ -181,12 +182,11 @@
 
 
             // Stop if Voice does not exist
-
             if (!voice) {
 
                 document.body.innerHTML = `
-                    <h1>Voice not found</h1>
-                `;
+                <h1>Voice not found</h1>
+            `;
 
                 return;
 
@@ -213,7 +213,6 @@
 
 
             // Find this Voice's ranking information
-
             const rankedVoice = rankedVoices.find(
                 rankedVoice => rankedVoice.id === voiceId
             );
@@ -246,9 +245,6 @@
                 voice.description;
 
 
-            // ========================================
-            // GLOBAL POETRY RANKING
-            // ========================================
             // ========================================
             // POET STATISTICS
             // ========================================
@@ -300,41 +296,41 @@
 
 
                 // Find the Poet who wrote this Poetry
-
                 const poet = DPSRY_DATA.poets.find(
                     poet => poet.id === poem.poet
                 );
 
 
                 // Display Poetry
-
                 poetryList.innerHTML += `
 
-                    <article class="poetry-card">
+                <article
+                    class="poetry-card"
+                    onclick="window.location.href='./poetry-detail.html?id=${poem.id}'"
+                >
 
-                        <h3>
+                    <h3>
 
-                            <a href="./poetry-detail.html?id=${poem.id}">
-                                #${poem.rank} — ${poem.name}
-                            </a>
+                        <a href="./poetry-detail.html?id=${poem.id}">
+                            #${poem.rank} — ${poem.name}
+                        </a>
 
-                        </h3>
+                    </h3>
 
-                        <p>
-                            ${poem.rating} |
-                            ${poet ? poet.name : "Unknown Poet"}
-                        </p>
+                    <p>
+                        ${poem.rating} |
+                        ${poet ? poet.name : "Unknown Poet"}
+                    </p>
 
-                    </article>
+                </article>
 
-                `;
+            `;
 
             });
 
         });
 
     </script>
-
 </body>
 
 </html>
