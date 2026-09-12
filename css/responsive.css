@@ -1,0 +1,378 @@
+/* ========================================
+   DPSRY — GLOBAL RESPONSIVE CSS
+======================================== */
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+@media (max-width: 700px) {
+
+    header nav {
+
+        flex-direction: column;
+
+        gap: 1.5rem;
+
+        text-align: center;
+
+    }
+
+
+    header nav ul {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 1rem 1.5rem;
+
+    }
+
+}
+
+/* ========================================
+   GLOBAL PAGE SPACING
+======================================== */
+
+@media (max-width: 700px) {
+
+    main {
+
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+
+    }
+
+}
+/* ========================================
+   POET CARDS — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    #poets-list {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 1rem;
+
+        margin-top: 2rem;
+
+    }
+
+
+    #poets-list .poet-card {
+
+        height: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 1.25rem;
+
+    }
+
+
+    .poet-card h3 {
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .poet-rank {
+
+        font-size: 0.7rem;
+
+        margin-top: 0.75rem;
+
+        margin-bottom: 1rem;
+
+    }
+
+
+    .poet-rank::after {
+
+        font-size: 2.25rem;
+
+    }
+
+}
+
+/* ========================================
+   POET PROFILE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    #poet-photo {
+
+        width: 160px;
+        height: 160px;
+
+    }
+
+
+    #poet-name {
+
+        font-size: 3rem;
+
+        margin-bottom: 2rem;
+
+    }
+
+
+    #poet-life,
+    #poet-ranking {
+
+        gap: 2rem;
+
+        margin-bottom: 2rem;
+
+    }
+
+
+    .poet-data-field {
+
+        min-width: 90px;
+
+    }
+
+
+    #poet-birth,
+    #poet-death,
+    #poet-rank,
+    #poet-rating {
+
+        font-size: 1rem;
+
+    }
+
+
+    #poet-poetry-count {
+
+        font-size: 1.25rem;
+
+    }
+
+
+    #poet-introduction {
+
+        max-width: 100%;
+
+    }
+
+}
+
+/* ========================================
+   POET PROFILE — POETRY
+======================================== */
+
+@media (max-width: 600px) {
+
+    main h2 {
+
+        margin-top: 4rem;
+
+        padding-top: 2rem;
+
+        font-size: 1.75rem;
+
+    }
+
+
+    #poet-poetry-list {
+
+        gap: 0.75rem;
+
+        margin-top: 1.5rem;
+
+    }
+
+
+    #poet-poetry-list .poetry-card {
+
+        padding: 1.25rem 1.25rem;
+
+    }
+
+}
+
+/* ========================================
+   POETRY PAGE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .poetry-card {
+        padding: 1.25rem 1.25rem;
+    }
+
+
+    .poetry-detail-header {
+        padding: 5rem 1.25rem 3rem;
+    }
+
+
+    #poetry-content {
+        margin-bottom: 5rem;
+        padding: 3rem 1.25rem;
+
+        font-size: 1.1rem;
+        line-height: 1.9;
+    }
+
+}
+
+/* ========================================
+   VOICE PAGE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* Two Voice cards per row on mobile. */
+    #voices-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+
+    /* Keep Voice cards equal in height. */
+    .voice-card {
+        height: 100%;
+        min-height: 220px;
+        padding: 1.25rem;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* Smaller Voice names. */
+    .voice-name {
+        font-size: 1.5rem;
+    }
+
+
+    /* Voice detail page title. */
+    #voice-name {
+        font-size: 2.625rem;
+    }
+
+
+    /* Voice description. */
+    #voice-description {
+        font-size: 0.95rem;
+    }
+
+
+    /* Poetry section heading. */
+    main h2 {
+        margin-top: 3.5rem;
+        font-size: 2rem;
+    }
+
+
+    /* Poetry list spacing. */
+    #voice-poetry-list {
+        gap: 0.75rem;
+    }
+
+
+    /* Poetry cards inside Voice detail. */
+    #voice-poetry-list .poetry-card {
+        padding: 1.25rem;
+    }
+
+}
+
+
+/* ========================================
+   ABOUT PAGE — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .about-page {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+
+    .about-intro {
+        min-height: 70vh;
+        padding: 2rem 0 4rem;
+    }
+
+
+    .about-intro h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+        margin-bottom: 2rem;
+    }
+
+
+    .about-lead {
+        font-size: 1.3rem;
+    }
+
+
+    .about-page > section:not(.about-intro) {
+        padding: 4rem 0;
+    }
+
+
+    .about-page h2 {
+        font-size: 2.5rem;
+    }
+
+
+    /* About content becomes one column. */
+    .about-elements {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Keep the nine Voices in two columns,
+       matching the Poet and Voice card system. */
+    .voices-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+}
+
+
+/* ========================================
+   DPS'S VISION — MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* Reduce vertical spacing on mobile. */
+    main > section:nth-child(2) {
+        min-height: auto;
+        padding: 4rem 1.25rem;
+    }
+
+
+    /* Vision heading. */
+    main > section:nth-child(2) h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+
+    /* Vision text / sea shape. */
+    main > section:nth-child(2) p {
+        width: 100%;
+        padding: 3rem 1.5rem;
+
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+}
